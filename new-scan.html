@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Scan - SecScan</title>
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="logo">SecScan</div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Repositories</a></li>
+          <li><a href="new-scan.html">New Scan</a></li>
+          <li><a href="scan-history.html">Scan History</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+
+      <header class="page-header">
+        <div>
+          <h1>New Scan</h1>
+          <p>Choose a repository and the tools to run</p>
+        </div>
+      </header>
+            <form class="scan-form">
+
+        <div class="form-field">
+          <label for="repo-url">Repository URL</label>
+          <input type="url" id="repo-url" name="repoUrl"
+                 placeholder="https://github.com/org/repo" required>
+          <small>Enter a public GitHub repository URL.</small>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="branch">Branch</label>
+            <select id="branch" name="branch">
+              <option value="main">main</option>
+              <option value="develop">develop</option>
+              <option value="release/2.1">release/2.1</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="depth">Scan depth</label>
+            <select id="depth" name="depth">
+              <option value="quick">Quick</option>
+              <option value="standard" selected>Standard</option>
+              <option value="deep">Deep</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="tool-list">
+          <legend>Scan tools</legend>
+
+          <div class="tool-item">
+            <input type="checkbox" id="tool-gitleaks" name="tools" value="gitleaks" checked>
+            <label for="tool-gitleaks">Gitleaks — Secret scanning</label>
+          </div>
+
+          <div class="tool-item">
+            <input type="checkbox" id="tool-npm" name="tools" value="npm-audit" checked>
+            <label for="tool-npm">npm audit — Dependency vulnerabilities</label>
+          </div>
+
+          <div class="tool-item">
+            <input type="checkbox" id="tool-semgrep" name="tools" value="semgrep" checked>
+            <label for="tool-semgrep">Semgrep — Code pattern analysis</label>
+          </div>
+
+          <div class="tool-item">
+            <input type="checkbox" id="tool-eslint" name="tools" value="eslint-security" checked>
+            <label for="tool-eslint">ESLint Security — Unsafe JS usage</label>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="reset">Cancel</button>
+          <button type="submit">Start Scan</button>
+        </div>
+
+      </form>
+
+      <section class="scan-status">
+        <h2>Scan status</h2>
+        <ul>
+          <li class="status-active">Ready</li>
+          <li>Scanning...</li>
+          <li>Completed</li>
+        </ul>
+      </section>
+
+      <p class="info-note">
+        Scans are simulated in this version. Results come from prepared
+        sample data; the goal is to model and present security data clearly.
+      </p>
+    </main>
+
+  </div>
+
+</body>
+</html>
