@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Findings - SecScan</title>
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="logo">SecScan</div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Repositories</a></li>
+          <li><a href="new-scan.html">New Scan</a></li>
+          <li><a href="scan-history.html">Scan History</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+
+            <header class="page-header">
+        <div>
+          <p class="breadcrumb">
+            <a href="scan-detail.html">← payment-gateway · 25 Aug 2026 scan</a>
+          </p>
+          <h1>Findings</h1>
+        </div>
+      </header>
+
+      <div class="toolbar">
+        <label for="finding-search">Search</label>
+        <input type="search" id="finding-search" placeholder="Search finding or file...">
+
+        <label for="finding-sort">Sort by</label>
+        <select id="finding-sort">
+          <option value="severity">Severity</option>
+          <option value="file">File</option>
+          <option value="tool">Tool</option>
+        </select>
+      </div>
+
+      <div class="filters">
+        <button type="button" class="chip chip-active">All 21</button>
+        <button type="button" class="chip chip-critical">Critical 3</button>
+        <button type="button" class="chip chip-high">High 6</button>
+        <button type="button" class="chip chip-medium">Medium 9</button>
+        <button type="button" class="chip chip-low">Low 3</button>
+      </div>
+
+      <p class="result-count">Showing 21 of 21 findings</p>
+
+      <table class="findings-table">
+        <thead>
+          <tr>
+            <th scope="col">Severity</th>
+            <th scope="col">Finding</th>
+            <th scope="col">File : line</th>
+            <th scope="col">Tool</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="severity severity-critical">Critical</span></td>
+            <td><a href="finding-detail.html">Hardcoded API key</a></td>
+            <td><span class="file-ref">src/config/api.js : 42</span></td>
+            <td>Gitleaks</td>
+          </tr>
+          <tr>
+            <td><span class="severity severity-critical">Critical</span></td>
+            <td><a href="finding-detail.html">User input executed without validation</a></td>
+            <td><span class="file-ref">src/utils/template.js : 118</span></td>
+            <td>Semgrep</td>
+          </tr>
+          <tr>
+            <td><span class="severity severity-critical">Critical</span></td>
+            <td><a href="finding-detail.html">Database password outside environment file</a></td>
+            <td><span class="file-ref">docker-compose.yml : 27</span></td>
+            <td>Gitleaks</td>
+          </tr>
+          <tr>
+            <td><span class="severity severity-high">High</span></td>
+            <td><a href="finding-detail.html">Outdated dependency: axios 0.21.1</a></td>
+            <td><span class="file-ref">package.json : 19</span></td>
+            <td>npm audit</td>
+          </tr>
+          <tr>
+            <td><span class="severity severity-high">High</span></td>
+            <td><a href="finding-detail.html">File upload missing type validation</a></td>
+            <td><span class="file-ref">src/api/upload.js : 64</span></td>
+            <td>Semgrep</td>
+          </tr>
+          <tr>
+            <td><span class="severity severity-high">High</span></td>
+            <td><a href="finding-detail.html">Session cookie not marked HttpOnly</a></td>
+            <td><span class="file-ref">src/auth/session.js : 31</span></td>
+            <td>Semgrep</td>
+          </tr>
+          <tr>
+            <td><span class="severity severity-medium">Medium</span></td>
+            <td><a href="finding-detail.html">Server path exposed in error message</a></td>
+            <td><span class="file-ref">src/api/errorHandler.js : 12</span></td>
+            <td>Semgrep</td>
+          </tr>
+          <tr>
+            <td><span class="severity severity-medium">Medium</span></td>
+            <td><a href="finding-detail.html">Sensitive data written to console</a></td>
+            <td><span class="file-ref">src/services/payment.js : 203</span></td>
+            <td>ESLint</td>
+          </tr>
+          <tr>
+            <td><span class="severity severity-low">Low</span></td>
+            <td><a href="finding-detail.html">Outdated setup steps in README</a></td>
+            <td><span class="file-ref">README.md : 8</span></td>
+            <td>Semgrep</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+  </div>
+
+</body>
+</html>

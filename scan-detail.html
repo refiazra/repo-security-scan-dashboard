@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>payment-gateway - SecScan</title>
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="logo">SecScan</div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Repositories</a></li>
+          <li><a href="new-scan.html">New Scan</a></li>
+          <li><a href="scan-history.html">Scan History</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+
+           <header class="page-header">
+        <div>
+          <p class="breadcrumb"><a href="index.html">← Repositories</a></p>
+          <h1>payment-gateway</h1>
+          <p><span class="branch">release/2.1</span> · 25 Aug 2026, 09:05</p>
+        </div>
+        <a class="button" href="findings.html">View findings</a>
+      </header>
+
+      <section class="score-panel">
+        <h2>Security score</h2>
+        <p class="score-value"><strong>41</strong> / 100</p>
+        <p class="score-label">Poor — needs immediate attention</p>
+      </section>
+
+      <section class="severity-summary">
+        <h2>Findings by severity</h2>
+        <ul class="card-list">
+          <li class="card card-critical">
+            <span class="card-title">Critical</span>
+            <span class="card-count">3</span>
+            <span class="card-note">fix immediately</span>
+          </li>
+          <li class="card card-high">
+            <span class="card-title">High</span>
+            <span class="card-count">6</span>
+            <span class="card-note">in this release</span>
+          </li>
+          <li class="card card-medium">
+            <span class="card-title">Medium</span>
+            <span class="card-count">9</span>
+            <span class="card-note">can be planned</span>
+          </li>
+          <li class="card card-low">
+            <span class="card-title">Low</span>
+            <span class="card-count">3</span>
+            <span class="card-note">informational</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="top-findings">
+        <h2>Highest risk findings</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Severity</th>
+              <th scope="col">Finding</th>
+              <th scope="col">File : line</th>
+              <th scope="col">Tool</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="severity severity-critical">Critical</span></td>
+              <td><a href="finding-detail.html">Hardcoded API key</a></td>
+              <td><span class="file-ref">src/config/api.js : 42</span></td>
+              <td>Gitleaks</td>
+            </tr>
+            <tr>
+              <td><span class="severity severity-critical">Critical</span></td>
+              <td><a href="finding-detail.html">User input executed without validation</a></td>
+              <td><span class="file-ref">src/utils/template.js : 118</span></td>
+              <td>Semgrep</td>
+            </tr>
+            <tr>
+              <td><span class="severity severity-critical">Critical</span></td>
+              <td><a href="finding-detail.html">Database password outside environment file</a></td>
+              <td><span class="file-ref">docker-compose.yml : 27</span></td>
+              <td>Gitleaks</td>
+            </tr>
+            <tr>
+              <td><span class="severity severity-high">High</span></td>
+              <td><a href="finding-detail.html">Outdated dependency: axios 0.21.1</a></td>
+              <td><span class="file-ref">package.json : 19</span></td>
+              <td>npm audit</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><a href="findings.html">View all 21 findings</a></p>
+      </section>
+
+      <section class="scan-info">
+        <h2>Scan info</h2>
+        <dl>
+          <dt>Duration</dt>
+          <dd>1 min 42 s</dd>
+
+          <dt>Files scanned</dt>
+          <dd>428</dd>
+
+          <dt>Total findings</dt>
+          <dd>21</dd>
+
+          <dt>Previous score</dt>
+          <dd>48 → 41</dd>
+
+          <dt>Tools used</dt>
+          <dd>Gitleaks, npm audit, Semgrep</dd>
+        </dl>
+      </section>
+    </main>
+
+  </div>
+
+</body>
+</html>
