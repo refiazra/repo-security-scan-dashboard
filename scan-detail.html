@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>payment-gateway - SecScan</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -14,7 +16,7 @@
 
       <nav>
         <ul>
-          <li><a href="index.html">Repositories</a></li>
+          <li><a href="index.html" class="is-active">Repositories</a></li>
           <li><a href="new-scan.html">New Scan</a></li>
           <li><a href="scan-history.html">Scan History</a></li>
         </ul>
@@ -29,8 +31,9 @@
           <h1>payment-gateway</h1>
           <p><span class="branch">release/2.1</span> · 25 Aug 2026, 09:05</p>
         </div>
-        <a class="button" href="findings.html">View findings</a>
+        <a class="btn btn-primary" href="findings.html">View findings</a>
       </header>
+      <div class="page-body">
 
       <section class="score-panel">
         <h2>Security score</h2>
@@ -126,6 +129,7 @@
           <dd>Gitleaks, npm audit, Semgrep</dd>
         </dl>
       </section>
+      </div>
     </main>
 
   </div>

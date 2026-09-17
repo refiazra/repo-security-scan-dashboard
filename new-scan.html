@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Scan - SecScan</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -15,7 +17,7 @@
       <nav>
         <ul>
           <li><a href="index.html">Repositories</a></li>
-          <li><a href="new-scan.html">New Scan</a></li>
+          <li><a href="new-scan.html" class="is-active">New Scan</a></li>
           <li><a href="scan-history.html">Scan History</a></li>
         </ul>
       </nav>
@@ -29,6 +31,7 @@
           <p>Choose a repository and the tools to run</p>
         </div>
       </header>
+      <div class="page-body">
             <form class="scan-form">
 
         <div class="form-field">
@@ -84,7 +87,7 @@
 
         <div class="form-actions">
           <button type="reset">Cancel</button>
-          <button type="submit">Start Scan</button>
+          <button type="submit" class="btn-primary">Start Scan</button>
         </div>
 
       </form>
@@ -102,6 +105,7 @@
         Scans are simulated in this version. Results come from prepared
         sample data; the goal is to model and present security data clearly.
       </p>
+      </div>
     </main>
 
   </div>

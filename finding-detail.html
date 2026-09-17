@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hardcoded API key - SecScan</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -14,7 +16,7 @@
 
       <nav>
         <ul>
-          <li><a href="index.html">Repositories</a></li>
+          <li><a href="index.html" class="is-active">Repositories</a></li>
           <li><a href="new-scan.html">New Scan</a></li>
           <li><a href="scan-history.html">Scan History</a></li>
         </ul>
@@ -23,7 +25,7 @@
 
     <main class="content">
 
-            <header class="page-header">
+      <header class="page-header">
         <div>
           <p class="breadcrumb"><a href="findings.html">← Findings</a></p>
           <h1>
@@ -33,9 +35,10 @@
         </div>
         <div class="header-actions">
           <button type="button">Ignore</button>
-          <button type="button">Mark as resolved</button>
+          <button type="button" class="btn-primary">Mark as resolved</button>
         </div>
       </header>
+      <div class="page-body">
 
       <section class="finding-description">
         <h2>Description</h2>
@@ -89,6 +92,7 @@
           behalf. This can lead to both data leakage and direct financial loss.
         </p>
       </section>
+      </div>
     </main>
 
   </div>
