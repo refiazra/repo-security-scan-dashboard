@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scan History - SecScan</title>
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="logo">SecScan</div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Repositories</a></li>
+          <li><a href="new-scan.html">New Scan</a></li>
+          <li><a href="scan-history.html">Scan History</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+
+            <header class="page-header">
+        <div>
+          <h1>Scan History</h1>
+          <p>payment-gateway · last 5 scans</p>
+        </div>
+        <div class="repo-picker">
+          <label for="history-repo">Repository</label>
+          <select id="history-repo">
+            <option value="payment-gateway">payment-gateway</option>
+            <option value="admin-panel">admin-panel</option>
+            <option value="icredible-web">icredible-web</option>
+            <option value="mobile-api">mobile-api</option>
+          </select>
+        </div>
+      </header>
+
+      <section class="score-trend">
+        <h2>Security score trend</h2>
+        <p class="trend-note">Down 7 points in the last scan</p>
+
+        <ul class="chart">
+          <li class="bar" data-score="71">
+            <span class="bar-value">71</span>
+            <span class="bar-fill"></span>
+            <span class="bar-label">21 Aug</span>
+          </li>
+          <li class="bar" data-score="66">
+            <span class="bar-value">66</span>
+            <span class="bar-fill"></span>
+            <span class="bar-label">22 Aug</span>
+          </li>
+          <li class="bar" data-score="52">
+            <span class="bar-value">52</span>
+            <span class="bar-fill"></span>
+            <span class="bar-label">23 Aug</span>
+          </li>
+          <li class="bar" data-score="48">
+            <span class="bar-value">48</span>
+            <span class="bar-fill"></span>
+            <span class="bar-label">24 Aug</span>
+          </li>
+          <li class="bar bar-latest" data-score="41">
+            <span class="bar-value">41</span>
+            <span class="bar-fill"></span>
+            <span class="bar-label">25 Aug</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="history-list">
+        <h2>All scans</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Branch</th>
+              <th scope="col">Score</th>
+              <th scope="col">Change</th>
+              <th scope="col">Findings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><time datetime="2026-08-25T09:05">25 Aug 2026, 09:05</time></td>
+              <td><span class="branch">release/2.1</span></td>
+              <td><span class="score score-critical">41</span></td>
+              <td><span class="change change-down">Down 7</span></td>
+              <td>21 findings</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-08-24T16:30">24 Aug 2026, 16:30</time></td>
+              <td><span class="branch">release/2.1</span></td>
+              <td><span class="score score-critical">48</span></td>
+              <td><span class="change change-down">Down 4</span></td>
+              <td>18 findings</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-08-23T11:47">23 Aug 2026, 11:47</time></td>
+              <td><span class="branch">main</span></td>
+              <td><span class="score score-high">52</span></td>
+              <td><span class="change change-down">Down 14</span></td>
+              <td>17 findings</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-08-22T10:02">22 Aug 2026, 10:02</time></td>
+              <td><span class="branch">main</span></td>
+              <td><span class="score score-medium">66</span></td>
+              <td><span class="change change-down">Down 5</span></td>
+              <td>11 findings</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-08-21T15:20">21 Aug 2026, 15:20</time></td>
+              <td><span class="branch">main</span></td>
+              <td><span class="score score-medium">71</span></td>
+              <td><span class="change">First scan</span></td>
+              <td>9 findings</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardcoded API key - SecScan</title>
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="logo">SecScan</div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Repositories</a></li>
+          <li><a href="new-scan.html">New Scan</a></li>
+          <li><a href="scan-history.html">Scan History</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+
+            <header class="page-header">
+        <div>
+          <p class="breadcrumb"><a href="findings.html">← Findings</a></p>
+          <h1>
+            <span class="severity severity-critical">Critical</span>
+            Hardcoded API key
+          </h1>
+        </div>
+        <div class="header-actions">
+          <button type="button">Ignore</button>
+          <button type="button">Mark as resolved</button>
+        </div>
+      </header>
+
+      <section class="finding-description">
+        <h2>Description</h2>
+        <p>
+          A service key is written directly into the source code. Because the
+          repository is public, anyone who can read the code can read this key.
+          The key also remains in past commits, so deleting it from the file is
+          not enough on its own.
+        </p>
+      </section>
+
+      <section class="affected-code">
+        <h2>Affected code</h2>
+        <p class="file-ref">src/config/api.js — line 42</p>
+<pre><code>40  const client = axios.create({
+41    baseURL: process.env.API_URL,
+42    apiKey: "sk_live_4eF9... (redacted)",
+43  });</code></pre>
+      </section>
+
+      <section class="suggested-fix">
+        <h2>Suggested fix</h2>
+        <ol>
+          <li>Revoke the key immediately and generate a new one — a leaked key is no longer safe.</li>
+          <li>Move the new key into an environment variable and add that file to <code>.gitignore</code>.</li>
+          <li>Purge the old key from the commit history; removing it from the file is not enough.</li>
+        </ol>
+      </section>
+
+      <section class="finding-meta">
+        <h2>Finding details</h2>
+        <dl>
+          <dt>Status</dt>
+          <dd><span class="status status-open">Open</span></dd>
+
+          <dt>Scanner</dt>
+          <dd>Gitleaks</dd>
+
+          <dt>First seen</dt>
+          <dd><time datetime="2026-08-22">22 Aug 2026</time></dd>
+
+          <dt>Category</dt>
+          <dd>Secret leak</dd>
+        </dl>
+      </section>
+
+      <section class="finding-impact">
+        <h2>Possible impact</h2>
+        <p>
+          Anyone holding the key can send requests to the payment service on your
+          behalf. This can lead to both data leakage and direct financial loss.
+        </p>
+      </section>
+    </main>
+
+  </div>
+
+</body>
+</html>
