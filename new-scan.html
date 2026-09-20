@@ -32,7 +32,7 @@
         </div>
       </header>
       <div class="page-body">
-            <form class="scan-form">
+            <form class="scan-form" id="scan-form">
 
         <div class="form-field">
           <label for="repo-url">Repository URL</label>
@@ -84,21 +84,24 @@
             <label for="tool-eslint">ESLint Security — Unsafe JS usage</label>
           </div>
         </fieldset>
+        
+        <p class="form-error" id="form-error" role="alert" hidden></p>
 
         <div class="form-actions">
           <button type="reset">Cancel</button>
-          <button type="submit" class="btn-primary">Start Scan</button>
+          <button type="submit" class="btn-primary" id="start-btn">Start Scan</button>
         </div>
 
       </form>
 
-      <section class="scan-status">
+      <section class="scan-status" aria-live="polite">
         <h2>Scan status</h2>
         <ul>
-          <li class="status-active">Ready</li>
-          <li>Scanning...</li>
-          <li>Completed</li>
+          <li class="status-active" id="step-ready">Ready</li>
+          <li id="step-scanning">Scanning...</li>
+          <li id="step-completed">Completed</li>
         </ul>
+        <p class="scan-result" id="scan-result" hidden></p>
       </section>
 
       <p class="info-note">
@@ -110,6 +113,7 @@
 
   </div>
   <script src="data/mock-data.js"></script>
+  <script src="js/new-scan.js"></script>
 
 </body>
 </html>
