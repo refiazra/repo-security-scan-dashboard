@@ -782,3 +782,17 @@ select {
   border-color: var(--text);
   color: #ffffff;
 }
+.status-resolved {
+  color: var(--low);
+  background: var(--low-bg);
+}
+
+.status-ignored {
+  color: var(--text-muted);
+  background: #f2f1ef;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
