@@ -27,76 +27,63 @@
 
       <header class="page-header">
         <div>
-          <p class="breadcrumb"><a href="findings.html">← Findings</a></p>
+          <p class="breadcrumb"><a id="back-link" href="findings.html">← Findings</a></p>
           <h1>
-            <span class="severity severity-critical">Critical</span>
-            Hardcoded API key
+            <span class="severity" id="finding-severity">critical</span>
+            <span id="finding-title">Hardcoded API key</span>
           </h1>
         </div>
-        <div class="header-actions">
-          <button type="button">Ignore</button>
-          <button type="button" class="btn-primary">Mark as resolved</button>
+        <div class="header-actions" id="finding-actions">
+          <button type="button" id="ignore-btn">Ignore</button>
+          <button type="button" class="btn-primary" id="resolve-btn">Mark as resolved</button>
         </div>
       </header>
-      <div class="page-body">
+      <div class="page-body" id="page-body">
 
       <section class="finding-description">
         <h2>Description</h2>
-        <p>
-          A service key is written directly into the source code. Because the
-          repository is public, anyone who can read the code can read this key.
-          The key also remains in past commits, so deleting it from the file is
-          not enough on its own.
-        </p>
+        <p id="finding-description"></p>
       </section>
 
       <section class="affected-code">
         <h2>Affected code</h2>
-        <p class="file-ref">src/config/api.js — line 42</p>
-<pre><code>40  const client = axios.create({
-41    baseURL: process.env.API_URL,
-42    apiKey: "sk_live_4eF9... (redacted)",
-43  });</code></pre>
+        <p class="file-ref" id="finding-file"></p>
+      <pre><code id="finding-snippet"></code></pre>
       </section>
 
       <section class="suggested-fix">
         <h2>Suggested fix</h2>
-        <ol>
-          <li>Revoke the key immediately and generate a new one — a leaked key is no longer safe.</li>
-          <li>Move the new key into an environment variable and add that file to <code>.gitignore</code>.</li>
-          <li>Purge the old key from the commit history; removing it from the file is not enough.</li>
-        </ol>
+        <p id="finding-fix"></p>
       </section>
 
       <section class="finding-meta">
         <h2>Finding details</h2>
         <dl>
           <dt>Status</dt>
-          <dd><span class="status status-open">Open</span></dd>
+          <dd><span class="status status-open" id="finding-status">Open</span></dd>
 
           <dt>Scanner</dt>
-          <dd>Gitleaks</dd>
+          <dd id="finding-scanner"></dd>
 
           <dt>First seen</dt>
-          <dd><time datetime="2026-08-22">22 Aug 2026</time></dd>
+          <dd><time id="finding-first-seen"></time></dd>
 
           <dt>Category</dt>
-          <dd>Secret leak</dd>
+          <dd id="finding-category"></dd>
         </dl>
       </section>
 
       <section class="finding-impact">
         <h2>Possible impact</h2>
-        <p>
-          Anyone holding the key can send requests to the payment service on your
-          behalf. This can lead to both data leakage and direct financial loss.
-        </p>
+        <p id="finding-impact"></p>
       </section>
       </div>
     </main>
 
   </div>
   <script src="data/mock-data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/finding-detail.js"></script>
 
 </body>
 </html>
