@@ -641,13 +641,6 @@ select {
   color: var(--text-muted);
 }
 
-/* Çubuk yüksekliği = puan × 1.6 piksel */
-.bar[data-score="71"] .bar-fill { height: 114px; }
-.bar[data-score="66"] .bar-fill { height: 106px; }
-.bar[data-score="52"] .bar-fill { height: 83px; }
-.bar[data-score="48"] .bar-fill { height: 77px; }
-.bar[data-score="41"] .bar-fill { height: 66px; }
-
 .bar-latest .bar-value { color: var(--critical); font-weight: 700; }
 .bar-latest .bar-fill  { background: var(--critical); }
 .bar-latest .bar-label { color: var(--text); font-weight: 600; }
@@ -795,4 +788,13 @@ select {
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+.change-up,
+.trend-note.trend-up {
+  color: var(--low);
+  font-weight: 500;
+}
+
+.trend-note.trend-flat {
+  color: var(--text-muted);
 }
