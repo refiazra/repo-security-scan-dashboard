@@ -776,3 +776,9 @@ select {
 [hidden] {
   display: none !important;
 }
+.chip.chip-active,
+.chip.chip-active:hover {
+  background: var(--text);
+  border-color: var(--text);
+  color: #ffffff;
+}
