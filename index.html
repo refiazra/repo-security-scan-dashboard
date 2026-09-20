@@ -28,7 +28,7 @@
       <header class="page-header">
         <div>
           <h1>Repositories</h1>
-          <p>5 repositories monitored</p>
+          <p id="repo-count">5 repositories monitored</p>
         </div>
         <button type="button" class="btn-primary">+ New Scan</button>
       </header>
@@ -56,68 +56,28 @@
           </tr>
         </thead>
 
-        <tbody>
-          <tr>
-            <td>
-              <a href="scan-detail.html">payment-gateway</a>
-              <span class="repo-org">icredible</span>
-            </td>
-            <td><span class="branch">release/2.1</span></td>
-            <td>25 Aug 2026</td>
-            <td><span class="score score-critical">41</span></td>
-            <td>21 findings</td>
-          </tr>
+                <tbody id="repo-list"></tbody>
+      </table>
 
-          <tr>
-            <td>
-              <a href="scan-detail.html">admin-panel</a>
-              <span class="repo-org">icredible</span>
-            </td>
-            <td><span class="branch">main</span></td>
-            <td>24 Aug 2026</td>
-            <td><span class="score score-high">55</span></td>
-            <td>15 findings</td>
-          </tr>
-
-          <tr>
-            <td>
-              <a href="scan-detail.html">icredible-web</a>
-              <span class="repo-org">icredible</span>
-            </td>
-            <td><span class="branch">main</span></td>
-            <td>25 Aug 2026</td>
-            <td><span class="score score-medium">62</span></td>
-            <td>12 findings</td>
-          </tr>
-
-          <tr>
-            <td>
-              <a href="scan-detail.html">mobile-api</a>
-              <span class="repo-org">icredible</span>
-            </td>
-            <td><span class="branch">develop</span></td>
-            <td>23 Aug 2026</td>
-            <td><span class="score score-low">78</span></td>
-            <td>6 findings</td>
-          </tr>
-
-          <tr>
-            <td>
-              <a href="scan-detail.html">design-tokens</a>
-              <span class="repo-org">icredible</span>
-            </td>
-            <td><span class="branch">main</span></td>
-            <td>Never scanned</td>
-            <td><span class="score">—</span></td>
-            <td><a href="new-scan.html">Start scan</a></td>
-          </tr>
-        </tbody>
-      </table> 
+      <template id="repo-row-template">
+        <tr>
+          <td>
+            <a class="repo-name" href="#"></a>
+            <span class="repo-org"></span>
+          </td>
+          <td><span class="branch"></span></td>
+          <td class="repo-date"></td>
+          <td><span class="score"></span></td>
+          <td class="repo-findings"></td>
+        </tr>
+      </template>
       </div>
     </main>
 
   </div>
   <script src="data/mock-data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/repositories.js"></script>
 
 </body>
 </html>
