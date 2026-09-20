@@ -38,7 +38,43 @@ function renderRepositories(list) {
     repoList.appendChild(row);
   });
 
-  repoCount.textContent = list.length + " repositories monitored";
+    repoCount.textContent = repositories.length + " repositories monitored";
 }
 
-renderRepositories(repositories);
+const searchInput = document.getElementById("repo-search");
+const sortSelect = document.getElementById("repo-sort");
+
+function updateList() {
+  const searchText = searchInput.value.trim().toLowerCase();
+
+  const filtered = repositories.filter(repo =>
+    repo.name.toLowerCase().includes(searchText)
+  );
+
+  const sortBy = sortSelect.value;
+
+  filtered.sort((a, b) => {
+    if (sortBy === "name") {
+      return a.name.localeCompare(b.name);
+    }
+
+    const scanA = getLatestScan(a.id);
+    const scanB = getLatestScan(b.id);
+
+    if (!scanA) return 1;
+    if (!scanB) return -1;
+
+    if (sortBy === "score") {
+      return scanA.score - scanB.score;
+    }
+
+    return scanB.date.localeCompare(scanA.date);
+  });
+
+  renderRepositories(filtered);
+}
+
+searchInput.addEventListener("input", updateList);
+sortSelect.addEventListener("change", updateList);
+
+updateList();
