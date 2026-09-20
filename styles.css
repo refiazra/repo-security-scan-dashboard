@@ -764,3 +764,15 @@ select {
     width: 100%;
   }
 }
+.score-panel.level-high .score-value strong,
+.score-panel.level-high .score-label { color: var(--high); }
+
+.score-panel.level-medium .score-value strong,
+.score-panel.level-medium .score-label { color: var(--medium); }
+
+.score-panel.level-low .score-value strong,
+.score-panel.level-low .score-label { color: var(--low); }
+
+[hidden] {
+  display: none !important;
+}

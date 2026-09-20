@@ -25,20 +25,20 @@
 
     <main class="content">
 
-           <header class="page-header">
+      <header class="page-header">
         <div>
           <p class="breadcrumb"><a href="index.html">← Repositories</a></p>
-          <h1>payment-gateway</h1>
-          <p><span class="branch">release/2.1</span> · 25 Aug 2026, 09:05</p>
+          <h1 id="repo-name">payment-gateway</h1>
+          <p id="scan-meta"><span class="branch" id="scan-branch">release/2.1</span> · <span id="scan-date">25 Aug 2026, 09:05</span></p>
         </div>
-        <a class="btn btn-primary" href="findings.html">View findings</a>
+        <a class="btn btn-primary" id="view-findings" href="findings.html">View findings</a>
       </header>
-      <div class="page-body">
+      <div class="page-body" id="page-body">
 
-      <section class="score-panel">
+      <section class="score-panel" id="score-panel">
         <h2>Security score</h2>
-        <p class="score-value"><strong>41</strong> / 100</p>
-        <p class="score-label">Poor — needs immediate attention</p>
+        <p class="score-value"><strong id="score-value">41</strong> / 100</p>
+        <p class="score-label" id="score-label">Poor — needs immediate attention</p>
       </section>
 
       <section class="severity-summary">
@@ -46,22 +46,22 @@
         <ul class="card-list">
           <li class="card card-critical">
             <span class="card-title">Critical</span>
-            <span class="card-count">3</span>
+            <span class="card-count" id="count-critical">3</span>
             <span class="card-note">fix immediately</span>
           </li>
           <li class="card card-high">
             <span class="card-title">High</span>
-            <span class="card-count">6</span>
+            <span class="card-count" id="count-high">6</span>
             <span class="card-note">in this release</span>
           </li>
           <li class="card card-medium">
             <span class="card-title">Medium</span>
-            <span class="card-count">9</span>
+            <span class="card-count" id="count-medium">9</span>
             <span class="card-note">can be planned</span>
           </li>
           <li class="card card-low">
             <span class="card-title">Low</span>
-            <span class="card-count">3</span>
+            <span class="card-count" id="count-low">3</span>
             <span class="card-note">informational</span>
           </li>
         </ul>
@@ -70,7 +70,7 @@
       <section class="top-findings">
         <h2>Highest risk findings</h2>
 
-        <table>
+        <table id="top-table">
           <thead>
             <tr>
               <th scope="col">Severity</th>
@@ -79,61 +79,49 @@
               <th scope="col">Tool</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><span class="severity severity-critical">Critical</span></td>
-              <td><a href="finding-detail.html">Hardcoded API key</a></td>
-              <td><span class="file-ref">src/config/api.js : 42</span></td>
-              <td>Gitleaks</td>
-            </tr>
-            <tr>
-              <td><span class="severity severity-critical">Critical</span></td>
-              <td><a href="finding-detail.html">User input executed without validation</a></td>
-              <td><span class="file-ref">src/utils/template.js : 118</span></td>
-              <td>Semgrep</td>
-            </tr>
-            <tr>
-              <td><span class="severity severity-critical">Critical</span></td>
-              <td><a href="finding-detail.html">Database password outside environment file</a></td>
-              <td><span class="file-ref">docker-compose.yml : 27</span></td>
-              <td>Gitleaks</td>
-            </tr>
-            <tr>
-              <td><span class="severity severity-high">High</span></td>
-              <td><a href="finding-detail.html">Outdated dependency: axios 0.21.1</a></td>
-              <td><span class="file-ref">package.json : 19</span></td>
-              <td>npm audit</td>
-            </tr>
-          </tbody>
+          <tbody id="top-findings-list"></tbody>
         </table>
 
-        <p><a href="findings.html">View all 21 findings</a></p>
+        <template id="finding-row-template">
+          <tr>
+            <td><span class="severity"></span></td>
+            <td><a class="finding-title" href="#"></a></td>
+            <td><span class="file-ref"></span></td>
+            <td class="finding-tool"></td>
+          </tr>
+        </template>
+
+        <p id="no-findings" hidden>No detailed findings in the sample data for this scan.</p>
+
+        <p><a id="all-findings-link" href="findings.html">View all 21 findings</a></p>
       </section>
 
       <section class="scan-info">
         <h2>Scan info</h2>
         <dl>
           <dt>Duration</dt>
-          <dd>1 min 42 s</dd>
+          <dd id="scan-duration">1 min 42 s</dd>
 
           <dt>Files scanned</dt>
-          <dd>428</dd>
+          <dd id="scan-files">428</dd>
 
           <dt>Total findings</dt>
-          <dd>21</dd>
+          <dd id="scan-total">21</dd>
 
           <dt>Previous score</dt>
-          <dd>48 → 41</dd>
+          <dd id="scan-previous">48 → 41</dd>
 
           <dt>Tools used</dt>
-          <dd>Gitleaks, npm audit, Semgrep</dd>
+          <dd id="scan-tools">Gitleaks, npm audit, Semgrep</dd>
         </dl>
       </section>
       </div>
-    </main>
+  </main>
 
   </div>
   <script src="data/mock-data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/scan-detail.js"></script>
 
 </body>
 </html>
